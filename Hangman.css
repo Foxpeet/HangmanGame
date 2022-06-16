@@ -1,0 +1,57 @@
+#persona{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+}
+.contenedorHangman{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:30%;
+    margin-bottom: -5px;
+    /* border: 1px solid blue; */
+}
+
+.cuerpo{
+    background-color: black;
+}
+#cabeza{
+    border: 2px solid black;
+    border-radius: 100%;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+}
+#torso{
+    width: 2px;
+    height: 90px;
+    margin-left: -12px;
+    margin-right: -12px;
+    
+}
+#brazo_der{
+    width: 75px;
+    height: 2px;
+    transform: rotate(45deg);
+}
+#brazo_izq {
+    width: 75px;
+    height: 2px;
+    transform: rotate(-45deg);
+}
+#pierna_der {
+    margin-left: -12px;
+    width: 75px;
+    height: 2px;
+    transform: rotate(45deg);
+}
+#pierna_izq {
+    margin-right: -12px;
+    width: 75px;
+    height: 2px;
+    transform: rotate(-45deg);
+}

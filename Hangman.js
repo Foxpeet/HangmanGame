@@ -1,4 +1,5 @@
 var palabra
+var contador = 0
 var a = "a"
 var b = "b"
 var c = "c"
@@ -33,6 +34,24 @@ function adivinarLetra(letra){
     if(palabra.includes(letra)){
         console.log("esta")
     } else {
-        console.log("no esta")
+        if(contador == 0){
+            contador++
+            document.getElementById("pierna_izq").style.backgroundColor = 'transparent'
+        } else if (contador == 1){
+            contador++
+            document.getElementById("pierna_der").style.backgroundColor = 'transparent'
+        } else if (contador == 2){
+            contador++
+            document.getElementById("brazo_izq").style.backgroundColor = 'transparent'
+        } else if (contador == 3){
+            contador++
+            document.getElementById("brazo_der").style.backgroundColor = 'transparent'
+        } else if (contador == 4){
+            contador++
+            document.getElementById("torso").style.backgroundColor = 'transparent'
+        } else if (contador == 5){
+            contador++
+            document.getElementById("cabeza").style.border = '0px solid black'
+        }
     }
 }

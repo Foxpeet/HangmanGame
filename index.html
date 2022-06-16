@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego del ahorcado</title>
 
+    <link rel="stylesheet" href="Hangman.css" type="text/css">
+
     <script src="Hangman.js"></script>
 </head>
 <body>
@@ -13,7 +15,21 @@
     <h2>Introduce la palabra a adivinar</h2>
     <input type="text" id="cogePalabra">
     <button onclick="GuardarPalabra()">Guardar palabra</button>
-    <div id="persona">Aqui va la persona</div>
+    <div id="persona">
+        <div class="contenedorHangman" id="contenedorCabeza">
+            <div class="cuerpo" id="cabeza"></div>
+        </div>
+        <div class="contenedorHangman" id="contenedorCentral">
+            <div class="cuerpo" id="brazo_izq"></div>
+            <div class="cuerpo" id="torso"></div>
+            <div class="cuerpo" id="brazo_der"></div>
+        </div>
+        <div class="contenedorHangman" id="contenedorPiernas">
+            <div class="cuerpo" id="pierna_izq"></div>
+            <div class="cuerpo" id="pierna_der"></div>
+        </div>
+        
+    </div>
     <div id="palabra"></div>
     <div id="letras">
         <button id="LetraA" onclick="adivinarLetra(a)">A</button>
