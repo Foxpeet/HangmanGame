@@ -1,4 +1,8 @@
-var palabra
+//-------------------------------------------------------------------------------------------
+//  Variables generales
+//-------------------------------------------------------------------------------------------
+
+var palabraOriginal
 var contador = 0
 var a = "a"
 var b = "b"
@@ -27,8 +31,23 @@ var x = "x"
 var y = "y"
 var z = "z"
 
+//-------------------------------------------------------------------------------------------
+//  para leer la tecla que el usuario ha presionado y ver si esta en la palabra
+//-------------------------------------------------------------------------------------------
+
+document.addEventListener("keypress", leerTeclado)
+function leerTeclado(e){
+    var evento = e || window.event
+    var caracter = evento.charCode || evento.keyCode
+    var casi = String.fromCharCode(caracter)
+    var final = casi.toLowerCase()
+    adivinarLetra(final)
+}
+
+
 function GuardarPalabra(){
-    palabra = document.getElementById("cogePalabra").value
+    palabraOriginal = document.getElementById("cogePalabra").value
+    palabra = palabraOriginal.toLowerCase()
 }
 function adivinarLetra(letra){
     if(palabra.includes(letra)){
@@ -54,4 +73,5 @@ function adivinarLetra(letra){
             document.getElementById("cabeza").style.border = '0px solid black'
         }
     }
+    document.getElementById("contadorActual").textContent = Number(contador)
 }

@@ -12,9 +12,20 @@
 </head>
 <body>
     <h1>Juego del ahorcado</h1>
+
+<!-- -----------------Aqui va para adivinar la palabra----------------------------------------------------------------------------- -->
     <h2>Introduce la palabra a adivinar</h2>
     <input type="text" id="cogePalabra">
     <button onclick="GuardarPalabra()">Guardar palabra</button>
+
+<!-- -----------------Aqui va el contador de fallos----------------------------------------------------------------------------- -->
+    <div id="contador">
+        <h3>Contador de fallos:  </h3>
+        <h3 id="contadorActual">0</h3>
+        <h3>/6</h3>
+    </div>
+
+<!-- -----------------Aqui va la persona de palo----------------------------------------------------------------------------- -->
     <div id="persona">
         <div class="contenedorHangman" id="contenedorCabeza">
             <div class="cuerpo" id="cabeza"></div>
@@ -28,36 +39,40 @@
             <div class="cuerpo" id="pierna_izq"></div>
             <div class="cuerpo" id="pierna_der"></div>
         </div>
-        
     </div>
+
+<!-- -----------------Aqui van los espacios para adivinar las letras----------------------------------------------------------------------------- -->
     <div id="palabra"></div>
+    
+<!-- -----------------Aqui van las letras para pulsar----------------------------------------------------------------------------- -->
+<!-- -----------------Tambien se puede mediante el teclado----------------------------------------------------------------------------- -->
     <div id="letras">
-        <button id="LetraA" onclick="adivinarLetra(a)">A</button>
-        <button id="LetraB" onclick="adivinarLetra(b)">B</button>
-        <button id="LetraC" onclick="adivinarLetra(c)">C</button>
-        <button id="LetraD" onclick="adivinarLetra(d)">D</button>
-        <button id="LetraE" onclick="adivinarLetra(e)">E</button>
-        <button id="LetraF" onclick="adivinarLetra(f)">F</button>
-        <button id="LetraG" onclick="adivinarLetra(g)">G</button>
-        <button id="LetraH" onclick="adivinarLetra(h)">H</button>
-        <button id="LetraI" onclick="adivinarLetra(i)">I</button>
-        <button id="LetraJ" onclick="adivinarLetra(j)">J</button>
-        <button id="LetraK" onclick="adivinarLetra(k)">K</button>
-        <button id="LetraL" onclick="adivinarLetra(l)">L</button>
-        <button id="LetraM" onclick="adivinarLetra(m)">M</button>
-        <button id="LetraN" onclick="adivinarLetra(n)">N</button>
-        <button id="LetraO" onclick="adivinarLetra(o)">O</button>
-        <button id="LetraP" onclick="adivinarLetra(p)">P</button>
-        <button id="LetraQ" onclick="adivinarLetra(q)">Q</button>
-        <button id="LetraR" onclick="adivinarLetra(r)">R</button>
-        <button id="LetraS" onclick="adivinarLetra(s)">S</button>
-        <button id="LetraT" onclick="adivinarLetra(t)">T</button>
-        <button id="LetraU" onclick="adivinarLetra(u)">U</button>
-        <button id="LetraV" onclick="adivinarLetra(v)">V</button>
-        <button id="LetraW" onclick="adivinarLetra(w)">W</button>
-        <button id="LetraX" onclick="adivinarLetra(x)">X</button>
-        <button id="LetraY" onclick="adivinarLetra(y)">Y</button>
-        <button id="LetraZ" onclick="adivinarLetra(z)">Z</button>
+        <button id="a" onclick="adivinarLetra(a)">A</button>
+        <button id="b" onclick="adivinarLetra(b)">B</button>
+        <button id="c" onclick="adivinarLetra(c)">C</button>
+        <button id="d" onclick="adivinarLetra(d)">D</button>
+        <button id="e" onclick="adivinarLetra(e)">E</button>
+        <button id="f" onclick="adivinarLetra(f)">F</button>
+        <button id="g" onclick="adivinarLetra(g)">G</button>
+        <button id="h" onclick="adivinarLetra(h)">H</button>
+        <button id="i" onclick="adivinarLetra(i)">I</button>
+        <button id="j" onclick="adivinarLetra(j)">J</button>
+        <button id="k" onclick="adivinarLetra(k)">K</button>
+        <button id="l" onclick="adivinarLetra(l)">L</button>
+        <button id="m" onclick="adivinarLetra(m)">M</button>
+        <button id="n" onclick="adivinarLetra(n)">N</button>
+        <button id="o" onclick="adivinarLetra(o)">O</button>
+        <button id="p" onclick="adivinarLetra(p)">P</button>
+        <button id="q" onclick="adivinarLetra(q)">Q</button>
+        <button id="r" onclick="adivinarLetra(r)">R</button>
+        <button id="s" onclick="adivinarLetra(s)">S</button>
+        <button id="t" onclick="adivinarLetra(t)">T</button>
+        <button id="u" onclick="adivinarLetra(u)">U</button>
+        <button id="v" onclick="adivinarLetra(v)">V</button>
+        <button id="w" onclick="adivinarLetra(w)">W</button>
+        <button id="x" onclick="adivinarLetra(x)">X</button>
+        <button id="y" onclick="adivinarLetra(y)">Y</button>
+        <button id="z" onclick="adivinarLetra(z)">Z</button>
     </div>
 </body>
 </html>
