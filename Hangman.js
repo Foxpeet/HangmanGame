@@ -2,8 +2,15 @@
 //  Variables generales
 //-------------------------------------------------------------------------------------------
 
-var palabraOriginal
-var contador = 0
+var palabraOriginal 
+//palabra original que se ha introducido a adivinar
+
+var contador = 0 
+//contador de fallos
+
+var letrasusadas = [] 
+//para guardar las letras que se han usado, para no poder sumar fallos accidentales
+
 var a = "a"
 var b = "b"
 var c = "c"
@@ -37,41 +44,49 @@ var z = "z"
 
 document.addEventListener("keypress", leerTeclado)
 function leerTeclado(e){
-    var evento = e || window.event
-    var caracter = evento.charCode || evento.keyCode
-    var casi = String.fromCharCode(caracter)
-    var final = casi.toLowerCase()
+    let evento = e || window.event
+    let caracter = evento.charCode || evento.keyCode
+    let casi = String.fromCharCode(caracter)
+    let final = casi.toLowerCase()
     adivinarLetra(final)
 }
 
+//-------------------------------------------------------------------------------------------
+//  Funciones generales
+//-------------------------------------------------------------------------------------------
 
 function GuardarPalabra(){
     palabraOriginal = document.getElementById("cogePalabra").value
     palabra = palabraOriginal.toLowerCase()
 }
 function adivinarLetra(letra){
-    if(palabra.includes(letra)){
-        console.log("esta")
-    } else {
-        if(contador == 0){
-            contador++
-            document.getElementById("pierna_izq").style.backgroundColor = 'transparent'
-        } else if (contador == 1){
-            contador++
-            document.getElementById("pierna_der").style.backgroundColor = 'transparent'
-        } else if (contador == 2){
-            contador++
-            document.getElementById("brazo_izq").style.backgroundColor = 'transparent'
-        } else if (contador == 3){
-            contador++
-            document.getElementById("brazo_der").style.backgroundColor = 'transparent'
-        } else if (contador == 4){
-            contador++
-            document.getElementById("torso").style.backgroundColor = 'transparent'
-        } else if (contador == 5){
-            contador++
-            document.getElementById("cabeza").style.border = '0px solid black'
+    if(!letrasusadas.includes(letra)){
+        if(palabra.includes(letra)){
+            document.getElementById(letra).style.backgroundColor = "greenyellow"
+            letrasusadas.push(letra)
+        } else {
+            if(contador == 0){
+                contador++
+                document.getElementById("pierna_izq").style.backgroundColor = 'transparent'
+            } else if (contador == 1){
+                contador++
+                document.getElementById("pierna_der").style.backgroundColor = 'transparent'
+            } else if (contador == 2){
+                contador++
+                document.getElementById("brazo_izq").style.backgroundColor = 'transparent'
+            } else if (contador == 3){
+                contador++
+                document.getElementById("brazo_der").style.backgroundColor = 'transparent'
+            } else if (contador == 4){
+                contador++
+                document.getElementById("torso").style.backgroundColor = 'transparent'
+            } else if (contador == 5){
+                contador++
+                document.getElementById("cabeza").style.border = '0px solid black'
+            }
+            document.getElementById(letra).style.backgroundColor = "red"
+            letrasusadas.push(letra)
         }
     }
-    document.getElementById("contadorActual").textContent = Number(contador)
+    document.getElementById("contadorActual").textContent = Number(contador) 
 }
