@@ -42,13 +42,15 @@ var z = "z"
 //  para leer la tecla que el usuario ha presionado y ver si esta en la palabra
 //-------------------------------------------------------------------------------------------
 
-document.addEventListener("keypress", leerTeclado)
 function leerTeclado(e){
     let evento = e || window.event
     let caracter = evento.charCode || evento.keyCode
+    console.log(caracter)
     let casi = String.fromCharCode(caracter)
     let final = casi.toLowerCase()
-    adivinarLetra(final)
+    if ((97 <= caracter && caracter <= 122) || (65 <= caracter && caracter <= 90)){
+        adivinarLetra(final)
+    }
 }
 
 //-------------------------------------------------------------------------------------------
@@ -58,7 +60,9 @@ function leerTeclado(e){
 function GuardarPalabra(){
     palabraOriginal = document.getElementById("cogePalabra").value
     palabra = palabraOriginal.toLowerCase()
+    document.addEventListener("keypress", leerTeclado)
 }
+
 function adivinarLetra(letra){
     if(!letrasusadas.includes(letra)){
         if(palabra.includes(letra)){
@@ -87,6 +91,9 @@ function adivinarLetra(letra){
             document.getElementById(letra).style.backgroundColor = "red"
             letrasusadas.push(letra)
         }
+        return
     }
+    // mensaje de "letra ya utilizada"
     document.getElementById("contadorActual").textContent = Number(contador) 
+    return
 }
